@@ -1,0 +1,159 @@
+<config>
+    <tabs>
+        <lotusbreath translate="label" module="lotusbreath_smtp">
+            <label>Lotus Breath</label>
+            <sort_order>100</sort_order>
+        </lotusbreath>
+    </tabs>
+    <sections>
+        <lotusbreath_smtp translate="label" module="lotusbreath_smtp">
+            <class>separator-top</class>
+            <label>Smtp System</label>
+            <tab>lotusbreath</tab>
+            <sort_order>130</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <smtp>
+                <label>Smtp Settings</label>
+                <frontend_type>text</frontend_type>
+                <sort_order>1</sort_order>
+                <show_in_default>1</show_in_default>
+                <show_in_website>1</show_in_website>
+                <show_in_store>1</show_in_store>
+                <fields>
+                    <enabled translate="label comment">
+                        <label>Enabled</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>adminhtml/system_config_source_yesno</source_model>
+                        <sort_order>1</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </enabled>
+                    <outgoing translate="label comment">
+                        <label>Outgoing Server</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>2</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <comment>
+                            <![CDATA[
+                                Example : smtp.gmail.com.
+                                For gmail account, please sure that you have unlocked display captcha while login.
+                                 <a target="_blank" href="https://accounts.google.com/DisplayUnlockCaptcha">https://accounts.google.com/DisplayUnlockCaptcha </a>
+
+                            ]]>
+                        </comment>
+                    </outgoing>
+                    <outgoing_port translate="label comment">
+                        <label>Outgoing port</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>3</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <comment>Example : 465</comment>
+                    </outgoing_port>
+                    <outgoing_ssl translate="label comment">
+                        <label>Use SSL</label>
+                        <frontend_type>select</frontend_type>
+                        <source_model>lotusbreath_smtp/system_config_source_smtp_ssl</source_model>
+                        <sort_order>4</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </outgoing_ssl>
+                    <username translate="label comment">
+                        <label>User Name</label>
+                        <frontend_type>text</frontend_type>
+                        <sort_order>5</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                        <comment>Username for login to outgoing mail server. Example : your_mail_name@gmail.com</comment>
+                    </username>
+                    <password translate="label comment">
+                        <label>Password</label>
+                        <frontend_type>password</frontend_type>
+                        <sort_order>6</sort_order>
+                        <show_in_default>1</show_in_default>
+                        <show_in_website>1</show_in_website>
+                        <show_in_store>1</show_in_store>
+                    </password>
+                </fields>
+                </smtp>
+                <testing>
+                    <label>Send a test mail</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <test_email>
+                            <label>Send test mail to :</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+
+                            <comment>If you empty this field, the test mail will be sent to store owner email</comment>
+                        </test_email>
+
+                        <template translate="label">
+                            <label>Email template for confirmation</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_email_template</source_model>
+                            <sort_order>2</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </template>
+
+                        <test_email_button>
+                            <frontend_type>button</frontend_type>
+                            <frontend_model>lotusbreath_smtp/system_config_form_smtpbutton</frontend_model>
+                            <sort_order>3</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>
+                                <![CDATA[
+                                <span id="smtp_test_result"></span>
+                                <script>
+                                <!--
+                                        function sendTestMail(url){
+
+                                            Element.show('loading-mask');
+                                            new Ajax.Request(url, {
+                                                method: 'post',
+                                                parameters: $("config_edit_form").serialize(),
+                                                onComplete: function(transport) {
+
+                                                    Element.hide('loading-mask');
+                                                    alert(transport.responseText);
+
+                                                },
+                                                onError : function(){
+                                                    Element.hide('loading-mask');
+                                                }
+
+                                            });
+                                        }
+                                        -->
+                                 </script>
+
+                                ]]>
+                            </comment>
+                        </test_email_button>
+
+                    </fields>
+                </testing>
+            </groups>
+        </lotusbreath_smtp>
+     </sections>
+</config>

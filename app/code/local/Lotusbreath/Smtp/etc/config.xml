@@ -1,0 +1,92 @@
+<config>
+    <modules>
+        <Lotusbreath_Smtp>
+            <version>1.0.0</version>
+        </Lotusbreath_Smtp>
+    </modules>
+    <global>
+        <models>
+            <lotusbreath_smtp>
+                <class>Lotusbreath_Smtp_Model</class>
+            </lotusbreath_smtp>
+            <core>
+                <rewrite>
+                    <email>Lotusbreath_Smtp_Model_Email</email>
+                    <email_template>Lotusbreath_Smtp_Model_Email_Template</email_template>
+                </rewrite>
+            </core>
+        </models>
+        <blocks>
+            <lotusbreath_smtp>
+                <class>Lotusbreath_Smtp_Block</class>
+            </lotusbreath_smtp>
+        </blocks>
+        <helpers>
+            <lotusbreath_smtp>
+                <class>Lotusbreath_Smtp_Helper</class>
+            </lotusbreath_smtp>
+        </helpers>
+        <template>
+            <email>
+                <lotusbreath_smtp_testing_template module="revocation">
+                    <label>Lotus Breath SMTP Template for send a test mail</label>
+                    <file>lotusbreath_smtp_testing_template.html</file>
+                    <type>html</type>
+                </lotusbreath_smtp_testing_template>
+            </email>
+
+        </template>
+    </global>
+    <admin>
+        <routers>
+            <lotusbreath_smtp>
+                <use>admin</use>
+                <args>
+                    <module>Lotusbreath_Smtp</module>
+                    <frontName>smtp</frontName>
+                </args>
+            </lotusbreath_smtp>
+        </routers>
+    </admin>
+    <adminhtml>
+
+        <translate>
+            <modules>
+                <Lotusbreath_Smptp>
+                    <files>
+                        <default>Lotusbreath_Smtp.csv</default>
+                    </files>
+                </Lotusbreath_Smptp>
+            </modules>
+        </translate>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <lotusbreath_smtp>
+                                            <title>Lotusbreath - SMTP System</title>
+                                        </lotusbreath_smtp>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+    </adminhtml>
+    <default>
+        <lotusbreath_smtp>
+            <smtp>
+
+                    <enabled>1</enabled>
+
+            </smtp>
+        </lotusbreath_smtp>
+
+    </default>
+</config>

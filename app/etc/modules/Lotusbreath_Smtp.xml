@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Lotusbreath_Smtp>
+        <active>true</active>
+        <codePool>local</codePool>
+        </Lotusbreath_Smtp>
+    </modules>
+</config>

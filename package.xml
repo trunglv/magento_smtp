@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<package>
+    <name>lotusbreath_smtp</name>
+    <version>1.0.0</version>
+    <stability>devel</stability>
+    <license>GLP 3.0</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Send mail via smtp mail server</summary>
+    <description>Send mail via smtp mail server</description>
+    <notes>In the development</notes>
+    <authors><author><name>Lotus Breath</name><user>trunglv</user><email>luuvantrung@gmail.com</email></author></authors>
+    <date>2014-06-17</date>
+    <time>12:08:32</time>
+    <contents><target name="magelocal"><dir name="Lotusbreath"><dir name="Smtp"><dir name="Block"><dir name="System"><dir name="Config"><dir name="Form"><file name="Smtpbutton.php" hash="278a3e120cdbceab3ce70dc2ea2ae384"/></dir></dir></dir></dir><dir name="Helper"><file name="Data.php" hash="1f578ac5e46353b3c9bf3c09f8971f9f"/></dir><dir name="Model"><dir name="Email"><file name="Template.php" hash="dc25c005e476f0a593e08d591091004f"/></dir><file name="Email.php" hash="5796c429f958083b0990c1e70fbfa96f"/><dir name="Smtp"><file name="Mail.php" hash="97b97f648652d6533426ce9a3915dbfa"/></dir><dir name="System"><dir name="Config"><dir name="Source"><dir name="Smtp"><file name="Ssl.php" hash="b40a611a1ec1105559632c866c5acd2f"/></dir></dir></dir></dir></dir><dir name="controllers"><dir name="Adminhtml"><file name="SmtpController.php" hash="a1ee892b9da7e97b9dadf4d8a17cb4cb"/></dir></dir><dir name="etc"><file name="config.xml" hash="7697453d719ff38412efb142b84ff1cb"/><file name="system.xml" hash="3315f05961d2afcda86d683531acfdb0"/></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Lotusbreath_Smtp.xml" hash="e98909fa550a64ab78d2c3943c136c44"/></dir></target><target name="magelocale"><dir name="en_US"><dir name="template"><dir name="email"><file name="lotusbreath_smtp_testing_template.html" hash="db2e81e157fe131caff4b7df127e4b30"/></dir></dir></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.0.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
