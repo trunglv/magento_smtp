@@ -55,7 +55,7 @@ class Lotusbreath_Smtp_Adminhtml_SmtpController extends Mage_Adminhtml_Controlle
         }
         $message = '';
         try{
-            $isOk = $emailTemplate->send('luuvantrung@gmail.com', null , $emailTemplateVariables);
+            $isOk = $emailTemplate->send($sendTo, null , $emailTemplateVariables);
             if ($isOk){
                 $message = 'Send mail successfully';
             }else{
